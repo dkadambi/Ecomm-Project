@@ -1,4 +1,16 @@
 EcommProject::Application.routes.draw do
+  resources :provinces
+
+  resources :customers
+
+  resources :orders
+
+  resources :lineitems
+
+  resources :categories
+
+  resources :products
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
