@@ -46,3 +46,6 @@ end
 
 # Use Active Admin
  gem 'activeadmin', github: 'gregbell/active_admin'
+ 
+# Use Paper Clip
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
