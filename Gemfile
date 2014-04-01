@@ -43,3 +43,6 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+# Use Active Admin
+ gem 'activeadmin', github: 'gregbell/active_admin', branch: '0-6-stable'
