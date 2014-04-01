@@ -1,5 +1,5 @@
 class Order < ActiveRecord::Base
-  has_many :line_items
-  has_many :products, :through => :line_items
-  belongs_to :customers
+  #has_many :line_items
+  #has_many :products, :through => :line_items
+  #belongs_to :customers
 end
