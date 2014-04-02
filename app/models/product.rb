@@ -4,5 +4,6 @@ class Product < ActiveRecord::Base
   #belongs_to :category
   
   has_attached_file :image_name, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
-  do_not_validate_attachment_file_type :image_name
+  validates_attachment_presence :image_name
+  #do_not_validate_attachment_file_type :image_name
 end
