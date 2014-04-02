@@ -48,7 +48,7 @@ end
  gem 'activeadmin', github: 'gregbell/active_admin'
  
 # Use Paper Clip
-#gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+gem "paperclip", '3.5.3'
 
 # Use Ruby Magic, required for paper clip
 #gem 'rmagick', '2.13.2', :git=>'http://github.com/rmagick/rmagick.git'
