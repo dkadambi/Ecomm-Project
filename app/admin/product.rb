@@ -1,11 +1,10 @@
 ActiveAdmin.register Product do
   
   
-  
   # See permitted parameters documentation:
   # https://github.com/gregbell/active_admin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
-  permit_params :name, :price, :stock_quantity, :image, :description
+  permit_params :name, :price, :stock_quantity, :image, :description, :destroy
   #
   # or
   #
@@ -15,4 +14,19 @@ ActiveAdmin.register Product do
   #  permitted
   # end
   
+  def _destroy
+   self.image.destroy
+  end
+  
+  form :html => { :enctype => "multipart/form-data" } do |f|
+   f.inputs "Details" do
+    f.input :name
+    f.input :description
+    f.input :price
+    f.input :stock_quantity
+    f.input :image, :as => :file, :hint => f.template.image_tag(f.object.image.url(:medium))
+    f.input :_destroy, as: :boolean, required: :false, label: 'Remove image'
+  end
+  f.actions
+ end
 end
