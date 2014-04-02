@@ -1,33 +1,15 @@
 <h1>All Products</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th>Stock quantity</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
     <% @products.each do |product| %>
-      <tr>
-        <td><%= link_to product.name, product %></td>
-        <td><%= product.description %></td>
-        <td><%= number_to_currency(product.price) %></td>
-        <td><%= product.stock_quantity %></td>
-        <td><%= image_tag product.image %></td>
+        <p>Name: <%= link_to product.name, product %></p>
+        <p>Description: <%= product.description %></p>
+        <p>Price: <%= number_to_currency(product.price) %></p>
+        <p>Quantity: <%= product.stock_quantity %></p>
+        <p><%= image_tag product.image %></p>
         <!-- <td><%= link_to 'Show', product %></td> -->
-<p><%= link_to 'Edit', edit_product_path(product) %></p>
-<p><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-
+        <p><%= link_to 'Edit', edit_product_path(product) %></p>
+        <p><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+        <hr />
     <% end %>
-
-
-<br>
 
 <%= link_to 'New Product', new_product_path %>
