@@ -89,10 +89,6 @@ ActiveRecord::Schema.define(version: 20140401205904) do
     t.string   "image_name_content_type"
     t.integer  "image_name_file_size"
     t.datetime "image_name_updated_at"
-    t.string   "photo_file_name"
-    t.string   "photo_content_type"
-    t.integer  "photo_file_size"
-    t.datetime "photo_updated_at"
   end
 
   create_table "provinces", force: true do |t|
