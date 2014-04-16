@@ -1,5 +1,5 @@
 EcommProject::Application.routes.draw do
-  get "store/index"
+  
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :provinces
@@ -14,7 +14,9 @@ EcommProject::Application.routes.draw do
 
   resources :products
   
-  root 'products#index'
+  get 'store/:id', to: 'store#show', as: 'store'
+  
+  root 'store#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

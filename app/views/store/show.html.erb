@@ -1,0 +1,9 @@
+<aside id="left">
+  <% @products.each do |product| %>
+    <h1><%= product.name %></h1>
+    <h3><%= product.description %></h3>
+    <h3>Price: <%= product.price %></h3>
+    <h3>Quantity<%= product.stock_quantity %></h3>
+    <h3><%= image_tag product.image%></h3>
+  <% end %>
+</aside>
