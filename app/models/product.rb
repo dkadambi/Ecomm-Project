@@ -1,7 +1,9 @@
 class Product < ActiveRecord::Base
   #has_many :line_items
   #has_many :orders, :through => :line_items
-  #belongs_to :category
+  belongs_to :category
+  
+  validates_presence_of :name, :description, :price, :stock_quantity
   
   has_attached_file :image
   #has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
