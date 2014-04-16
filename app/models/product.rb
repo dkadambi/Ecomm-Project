@@ -3,7 +3,7 @@ class Product < ActiveRecord::Base
   #has_many :orders, :through => :line_items
   belongs_to :category
   
-  validates_presence_of :name, :description, :price, :stock_quantity
+  validates_presence_of :name, :description, :price, :stock_quantity, :category_id
   
   has_attached_file :image
   #has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
