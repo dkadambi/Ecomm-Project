@@ -71,10 +71,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :description, :price, :stock_quantity, :image, :remove_photo)
-    end
-    
-    def remove_photo
-      self.image.destroy if self.remove_image == '1'
+      params.require(:product).permit(:name, :description, :price, :stock_quantity, :image)
     end
 end
