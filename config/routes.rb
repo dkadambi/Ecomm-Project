@@ -16,6 +16,11 @@ EcommProject::Application.routes.draw do
   
   get 'store/:id', to: 'store#show', as: 'store'
   
+  get '/search' => 'store#search', as: 'search'
+  
+  get '/search_results' => 'store#search_results', as: 'search_results'
+  
+  #get 'store/search', to: 'store#search', as: 'search'
   root 'store#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

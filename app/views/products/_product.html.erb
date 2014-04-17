@@ -1,0 +1,8 @@
+<section>
+  <p>Name: <%= link_to product.name, product %></p>
+  <p>Description: <%= product.description %></p>
+  <p>Price: <%= number_to_currency(product.price) %></p>
+  <p>Quantity: <%= product.stock_quantity %></p>
+  <p><%= image_tag product.image %></p>
+  <hr />
+</section>
