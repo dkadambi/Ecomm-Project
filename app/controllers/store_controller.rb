@@ -16,11 +16,15 @@ class StoreController < ApplicationController
   
   # using the ? instead of just keywords in where clause protects against sql injection
   def search_results
-    @found_products = Product.keyword_search(params[:search_keywords],params[:searchables])
     
-    #keywords = "%" + params[:search_keywords] + "%"
-    #@found_products = Product.where("name LIKE ? OR description LIKE ?", keywords, keywords)
+    if params[:keyword_button]
+      @found_products = Product.keyword_search(params[:search_keywords],params[:searchables])
+    end
+    
+    if params[:status_button]
+      @found_products = Product.status_search(params[:status_search])
+    end
+    
   end
-  
   
 end

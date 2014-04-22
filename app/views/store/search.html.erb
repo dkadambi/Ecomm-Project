@@ -1,5 +1,11 @@
 <%= form_tag search_results_path, method: 'get' do %>
 <%= text_field_tag :search_keywords %>
 <%= select_tag "searchables", options_from_collection_for_select(@categories, "id", "name"), :prompt => 'All Products' %>
-<%= submit_tag "Search" %>
+<%= submit_tag "Search", name: 'keyword_button' %>
+<% end %>
+
+
+<%= form_tag search_results_path, method: 'get' do %>
+<%= select_tag("status_search", options_for_select([['On Sale', 'on sale'], ['New', 'new'], ['Recently Added', 'recently added']] )) %>
+<%= submit_tag "Check", name: 'status_button' %>
 <% end %>
