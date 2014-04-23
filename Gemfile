@@ -50,5 +50,6 @@ end
 # Use Paper Clip
 gem "paperclip", '3.5.3'
 
+gem 'rubocop', '~> 0.20.1'
 # Use Ruby Magic, required for paper clip
 #gem 'rmagick', '2.13.2', :git=>'http://github.com/rmagick/rmagick.git'
