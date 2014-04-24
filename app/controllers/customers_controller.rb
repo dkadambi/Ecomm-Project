@@ -16,10 +16,6 @@ class CustomersController < ApplicationController
   def new
     @customer = Customer.new
     
-    if @customer.save
-       session[:login_id] << @customer.id
-    end
-    
   end
 
   # GET /customers/1/edit
@@ -30,7 +26,10 @@ class CustomersController < ApplicationController
   # POST /customers.json
   def create
     @customer = Customer.new(customer_params)
-   
+    
+    if @customer.save
+       session[:login_id] = @customer.id
+    end
     
     respond_to do |format|
       if @customer.save

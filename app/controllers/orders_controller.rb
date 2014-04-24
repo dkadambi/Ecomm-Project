@@ -20,6 +20,33 @@ class OrdersController < ApplicationController
   # GET /orders/1/edit
   def edit
   end
+  
+  def check_out
+    @items_id_to_checkout = session[:product_id]
+    flash[:notice] = session[:product_id]
+    login_id = session[:login_id]
+    customer = Customer.find(login_id.to_i)
+    
+    order = customer.orders.build
+    order.status = "new"
+    order.save
+    
+    @items_id_to_checkout.each {|current_item_id|
+      product = Product.find(current_item_id.to_i)
+      
+      line_item = order.line_items.build
+      line_item.quantity = 1
+      line_item.price = product.price
+      line_item.product_id = product.id
+      line_item.order_id = order.id
+      line_item.save
+      
+      if line_item.save
+        flash[:notice] = 'Checkout Complete!'
+      end
+      
+    }
+  end
 
   # POST /orders
   # POST /orders.json

@@ -22,6 +22,18 @@ class ProductsController < ApplicationController
       
     redirect_to orders_path
   end
+  
+  def delete_item
+    @item = params[:id]
+      
+    session[:product_id].each_with_index do |current_session,i|
+      if current_session.to_s == @item.to_s
+            session[:product_id].delete(params[:id].to_i)
+      end
+    end
+    
+    redirect_to orders_path
+  end
 
   # GET /products/new
   def new

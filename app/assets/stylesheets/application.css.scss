@@ -107,6 +107,7 @@ nav {
 
 .title {
     font-size: 30px;
+    padding-bottom: 10px;
 }
 
 footer {
@@ -150,3 +151,13 @@ footer {
     }
 }
 
+.shopping_cart_items {
+    font-size:20px;
+    background-color: gray;
+    width: 500px;
+    height: 40px;
+}
+
+.delete {
+    padding-left: 200px;
+}

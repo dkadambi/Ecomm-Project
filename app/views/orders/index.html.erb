@@ -1,7 +1,14 @@
-<h1>Shopping cart</h1>
-
+<h1 class="title">Shopping cart</h1>
+<%= debug(params) %>
+<section class="shopping_cart">
     <% session[:product_id].each do |item| %>
-        <%= item %>
-        
+      <% Product.where("id = '#{item}'").each do |product| %>
+        <p class="shopping_cart_items"><%= product.name %> <%= number_to_currency(product.price) %> <span class="delete"><%= link_to "Delete", remove_cart_item_path(item)%></span></p>
+        <br
+        <% @product_sum = 0.0 %>
+        <% @product_sum = @product_sum + product.price %>
+      <% end %>
     <% end %>
-<br>
+    <p>Total: <%= @product_sum %></p>
+    <%= button_to "Checkout", checkout_complete_path  %>
+</section>

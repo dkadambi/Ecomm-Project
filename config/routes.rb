@@ -26,6 +26,10 @@ EcommProject::Application.routes.draw do
   
   get 'checkout/:id' => 'products#accept_and_redirect', as: 'checkout'
   
+  get 'remove/:id' => 'products#delete_item', as: 'remove_cart_item'
+  
+  post 'checkout' => 'orders#check_out', as: 'checkout_complete'
+  
   #get 'store/search', to: 'store#search', as: 'search'
   root 'store#index'
 
