@@ -28,8 +28,8 @@
     <%= f.text_field :city %>
   </div>
   <div class="field">
-    <%= f.label :country %><br>
-    <%= f.text_field :country %>
+    <%= f.label :province %><br>
+    <%= select_tag "province", options_from_collection_for_select(Province.all, "id", "name")%>
   </div>
   <div class="field">
     <%= f.label :postal_code %><br>

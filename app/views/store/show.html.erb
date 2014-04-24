@@ -6,4 +6,5 @@
     <h3>Quantity<%= product.stock_quantity %></h3>
     <h3><%= image_tag product.image%></h3>
   <% end %>
+<%= link_to "Add to Cart", checkout_path(@products)%>
 </aside>

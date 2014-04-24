@@ -26,9 +26,13 @@ class CustomersController < ApplicationController
   # POST /customers.json
   def create
     @customer = Customer.new(customer_params)
+    @customer.province_id = Province.where("id = #{params[:province].to_i}")[0].id
     
     if @customer.save
        session[:login_id] = @customer.id
+       session[:logged_in] = true
+    else
+      session[:logged_in] = false
     end
     
     respond_to do |format|
@@ -74,6 +78,6 @@ class CustomersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def customer_params
-      params.require(:customer).permit(:first_name, :last_name, :address, :city, :country, :postal_code, :email)
+      params.require(:customer).permit(:first_name, :last_name, :address, :city, :postal_code, :email)
     end
 end

@@ -1,7 +1,7 @@
 class Order < ActiveRecord::Base
   has_many :line_items
   has_many :products, :through => :line_items
-  belongs_to :customers
+  belongs_to :customer
   
   validates :status, presence: true
 end

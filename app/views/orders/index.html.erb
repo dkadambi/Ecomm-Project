@@ -1,14 +1,30 @@
 <h1 class="title">Shopping cart</h1>
-<%= debug(params) %>
+
 <section class="shopping_cart">
+  <% product_sum = 0.0 %>
+  <% if session[:product_id]%>
     <% session[:product_id].each do |item| %>
       <% Product.where("id = '#{item}'").each do |product| %>
         <p class="shopping_cart_items"><%= product.name %> <%= number_to_currency(product.price) %> <span class="delete"><%= link_to "Delete", remove_cart_item_path(item)%></span></p>
-        <br
-        <% @product_sum = 0.0 %>
-        <% @product_sum = @product_sum + product.price %>
+        <br>
+        
+        <% product_sum = product_sum + product.price %>
       <% end %>
     <% end %>
-    <p>Total: <%= @product_sum %></p>
+   
+    <% if @customer.province.gst!= 0 %>
+      <p>GST: <%= @customer.province.gst*100.round(2)%>%</p>
+    <% end %>
+    <% if @customer.province.pst != 0 %>
+      <p>PST: <%= @customer.province.pst*100.round(2)%>%</p>
+    <% end %>    
+    <% if @customer.province.hst != 0 %>
+      <p>HST: <%= @customer.province.hst*100.round(2)%>%</p>
+    <% end %>
+    <% taxes = 1 + @customer.province.hst + @customer.province.gst + @customer.province.pst %>
+    <p>Subtotal: <%= number_to_currency(product_sum) %></p>
+    <p>Total: <%= number_to_currency(product_sum * taxes)%></p>
     <%= button_to "Checkout", checkout_complete_path  %>
+  <% end %>
+  
 </section>
