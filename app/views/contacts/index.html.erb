@@ -1,12 +1,14 @@
-<h1 class="title">Contact</h1>
-    <% @contacts.each do |contact| %>
-        <h1><%= contact.title %></h1>
-        <p>Address<%= contact.street_address %></p>
-        <p><%= contact.city %></p>
-        <p><%= contact.province %></p>
-        <p><%= contact.country %></p>
-        <p>Phone: <%= contact.phone %></p>
-        <p>Email: <%= contact.email %></p>
-        <p><%= contact.additional_information %></p>
-    <% end %>
-<br>
+<section>
+  <h1 class="title">Contact</h1>
+      <% @contacts.each do |contact| %>
+          <h1><%= contact.title %></h1>
+          <p><%= contact.street_address %></p>
+          <p><%= contact.city %></p>
+          <p><%= contact.province %></p>
+          <p><%= contact.country %></p>
+          <p>Phone: <%= contact.phone %></p>
+          <p>Email: <%= contact.email %></p>
+          <p><%= contact.additional_information %></p>
+      <% end %>
+  <br>
+</section>

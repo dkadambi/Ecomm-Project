@@ -1,5 +1,7 @@
 EcommProject::Application.routes.draw do
   
+  resources :abouts
+
   resources :contacts
 
   devise_for :admin_users, ActiveAdmin::Devise.config

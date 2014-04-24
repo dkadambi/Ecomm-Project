@@ -1,0 +1,128 @@
+$background_color: gray;
+
+
+html {
+    background-color: $background_color;
+    
+}
+body {
+    background-color: $background_color;
+    margin: 0 auto;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+#wrap {
+    width: 1200px;
+    background-color: white;
+    margin: 0 auto;
+    border:1px solid black;
+    border-radius:5px;
+}
+
+nav {
+    text-align: center;
+    
+    ul{
+        list-style-type:none;
+        padding:0;
+    }
+    
+    li{
+        display:inline;
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 20px;
+        background-color: black;
+        text-decoration: none;
+        color: black;
+        
+        a:link {
+            text-decoration:none;
+            color:white;
+        }
+        
+        a:visited {
+            text-decoration:none;
+            color:white;
+        }
+        a:hover {
+            text-decoration:underline;
+            color:white;
+        }
+        a:active {
+            text-decoration:underline;
+            color:white;
+        }
+    }
+}
+
+#logo {
+    font-size: 30px;
+    background-color: black;
+    color: white;
+    height: 100px;
+    text-shadow: 1px 1px #ff0000;
+}
+
+.left {
+    
+    float: left;
+    width: 100px;
+    
+    h2{
+        background-color:black;
+        text-align: center;
+        box-shadow: 5px 5px 5px gray;
+        a:link {
+            text-decoration:none;
+            color:white;
+        }
+        
+        a:visited {
+            text-decoration:none;
+            color:white;
+        }
+        a:hover {
+            text-decoration:underline;
+            color:white;
+        }
+        a:active {
+            text-decoration:underline;
+            color:white;
+        }
+    }
+}
+
+.right {
+    float: right;
+    
+    
+    .about_content{
+        line-height:40px;
+    }
+    
+    text-align:left;
+    width: 900px;
+}
+
+.title {
+    font-size: 30px;
+}
+
+footer {
+    text-align: center;
+    clear:both;
+    
+    ul{
+        list-style-type:none;
+        padding:0;
+    }
+    
+    li{
+        display:inline;
+        text-decoration: none;
+        color: black;
+        padding: 10px;
+    }
+}

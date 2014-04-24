@@ -11,7 +11,7 @@ class StoreController < ApplicationController
   end
   
   def search
-    @categories = Category.all
+    
   end
   
   # using the ? instead of just keywords in where clause protects against sql injection
