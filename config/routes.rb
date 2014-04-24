@@ -24,6 +24,8 @@ EcommProject::Application.routes.draw do
   
   get '/search_results' => 'store#search_results', as: 'search_results'
   
+  get 'checkout/:id' => 'products#accept_and_redirect', as: 'checkout'
+  
   #get 'store/search', to: 'store#search', as: 'search'
   root 'store#index'
 

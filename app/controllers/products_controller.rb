@@ -10,6 +10,17 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+  
+  end
+  
+  def accept_and_redirect
+    
+    @product = Product.find(params[:id])
+      
+    session[:product_id] ||= []
+    session[:product_id] << @product.id
+      
+    redirect_to orders_path
   end
 
   # GET /products/new

@@ -112,6 +112,7 @@ nav {
 footer {
     text-align: center;
     clear:both;
+    padding-top: 30px;
     
     ul{
         list-style-type:none;
@@ -125,3 +126,27 @@ footer {
         padding: 10px;
     }
 }
+
+.login {
+    padding-left: 800px;
+    position: relative;
+    top: 30px;
+    
+    a:link {
+            text-decoration:none;
+            color:blue;
+        }
+    a:visited {
+        text-decoration:none;
+        color:blue;
+    }
+    a:hover {
+        text-decoration:underline;
+        color:blue;
+    }
+    a:active {
+        text-decoration:underline;
+        color:blue;
+    }
+}
+
